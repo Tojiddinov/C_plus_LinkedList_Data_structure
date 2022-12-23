@@ -364,58 +364,186 @@ using namespace std;
 //
 
 
-class Node{
-public:
-    int value;
-    Node* next;
-    Node* previus;
+//class Node{
+//public:
+//    int value;
+//    Node* next;
+//    Node* previus;
+//};
+//void printForward(Node*head){
+//    Node* traverser = head;
+//    while (traverser != nullptr){
+//        cout<<traverser->value<<endl;
+//        traverser = traverser->next;
+//    }
+//}
+//void printBackward(Node*tail){
+//    Node* traverser = tail;
+//    while (traverser != nullptr){
+//        cout<<traverser->value<<endl;
+//        traverser = traverser->previus;
+//    }
+//}
+//
+//int main(){
+//
+//    Node* head;
+//    Node* tail;
+//// add first node
+//    Node* node = new Node();
+//    node->value = 4;
+//    node -> next = nullptr;
+//    node -> previus = nullptr;
+//    head = node;
+//    tail= node;
+//
+//    //add second node
+//
+//    node = new Node();
+//    node->value = 43;
+//    node -> next = nullptr;
+//    node -> previus = tail;
+//    tail ->next = node;
+//    tail= node;
+//
+//   // add third node
+//    node = new Node();
+//    node->value = 423;
+//    node -> next = nullptr;
+//    node -> previus = tail;
+//    tail ->next = node;
+//    tail= node;
+//
+//    printForward(head);
+//    printBackward(tail);
+//
+//    cin.get();
+//}
+
+
+//Binary treee
+//struct Node{
+//    int data;
+//    Node* left;
+//    Node* right;
+//
+//};
+// Node* createNode(int data){
+//
+//     Node* newNode = new Node();
+//
+//     newNode->data = data;
+//     newNode->left = newNode->right= nullptr;
+//     return nullptr;
+// }
+
+//
+// int main(){
+//     Node* root= createNode(23);
+//
+//     root->left= createNode(32);
+//     root->right= createNode(311);
+//     root->left->left = createNode(4);
+//     root->left->left = createNode(4);
+//     root->right->left = createNode(4);
+//     root->right->left = createNode(4);
+//     root->right->right = createNode(4);
+//     root->right->right = createNode(4);
+//
+//     root->left->right->left = createNode(232);
+//     root->right->right->left = createNode(2232);
+//
+//
+//
+//
+// }
+
+//traversal function
+
+//preorder algortihm
+//struct Node{
+//    int data;
+//    Node* left;
+//    Node* right;
+//
+//};
+//Node* createNode(int data){
+//
+//    Node* newNode = new Node();
+//
+//    newNode->data = data;
+//    newNode->left = newNode->right= nullptr;
+//    return nullptr;
+//}
+//void printTree(Node* root){
+//    if (root== nullptr)return;
+//    cout << root -> data << endl;
+//    printTree(root->left);
+//    printTree(root->right);
+//}
+//
+//int main() {
+//    Node* root = createNode(23);
+//
+//    root->left = createNode(32);
+//    root->right = createNode(311);
+//    root->left->left = createNode(4);
+//    root->left->left = createNode(4);
+//    root->right->left = createNode(4);
+//    root->right->left = createNode(4);
+//    root->right->right = createNode(4);
+//    root->right->right = createNode(4);
+//
+//    root->left->right->left = createNode(232);
+//    root->right->right->left = createNode(2232);
+//
+//    printTree(root);
+//
+//    cin.get();
+//
+//
+//}
+
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+
 };
-void printForward(Node*head){
-    Node* traverser = head;
-    while (traverser != nullptr){
-        cout<<traverser->value<<endl;
-        traverser = traverser->next;
-    }
+Node* createNode(int data){
+
+    Node* newNode = new Node();
+
+    newNode->data = data;
+    newNode->left = newNode->right= nullptr;
+    return nullptr;
 }
-void printBackward(Node*tail){
-    Node* traverser = tail;
-    while (traverser != nullptr){
-        cout<<traverser->value<<endl;
-        traverser = traverser->previus;
-    }
+void printTree(Node* root){
+    if (root == nullptr)return;
+
+    printTree(root->left);
+    cout << root -> data << endl;
+    printTree(root->right);
 }
 
-int main(){
+int main() {
+    Node* root = createNode(23);
 
-    Node* head;
-    Node* tail;
-// add first node
-    Node* node = new Node();
-    node->value = 4;
-    node -> next = nullptr;
-    node -> previus = nullptr;
-    head = node;
-    tail= node;
+    root->left = createNode(32);
+    root->right = createNode(311);
+    root->left->left = createNode(4);
+    root->left->left = createNode(4);
+    root->right->left = createNode(4);
+    root->right->left = createNode(4);
+    root->right->right = createNode(4);
+    root->right->right = createNode(4);
 
-    //add second node
+    root->left->right->left = createNode(232);
+    root->right->right->left = createNode(2232);
 
-    node = new Node();
-    node->value = 43;
-    node -> next = nullptr;
-    node -> previus = tail;
-    tail ->next = node;
-    tail= node;
-
-   // add third node
-    node = new Node();
-    node->value = 423;
-    node -> next = nullptr;
-    node -> previus = tail;
-    tail ->next = node;
-    tail= node;
-
-    printForward(head);
-    printBackward(tail);
+    printTree(root);
 
     cin.get();
+
+
 }
